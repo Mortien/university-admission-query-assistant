@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10091d">
+  <title>University of Rozhok | Admissions Portal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='theme.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='campus.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='voice.css') }}">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="University admissions home">
+        <img class="brand-logo" src="{{ url_for('static', filename='university-mark.svg') }}" alt="">
+        <span class="brand-name"><strong>UNIVERSITY OF ROZHOK</strong><small>ADMISSIONS PORTAL</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#campus">Campus</a><a href="#procedures">How to apply</a><a href="#fees">Fees</a><a href="#dates">Key dates</a><a href="#documents">Documents</a><a href="#policies">Policies</a>
+      </nav>
+      <a class="nav-ask" href="#ask">Ask a question <span>↗</span></a>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT CHAPTER STARTS HERE</p>
+        <h1>Find your place.<br><span>Shape your future.</span></h1>
+        <p class="intro">Explore programmes and get clear guidance for every step of your admission journey.</p>
+        <div class="hero-actions"><a class="primary-link" href="#ask">Ask about courses <span>↓</span></a><a class="quiet-link" href="#procedures">See how to apply <span>↗</span></a></div>
+        <div class="hero-footnote"><span class="pulse-dot"></span> Admission information in one place</div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="hero-crest"><img src="{{ url_for('static', filename='university-mark.svg') }}" alt=""></div><div class="orbit-label label-top">LEARN</div><div class="orbit-label label-bottom">LEAD</div><span class="hero-star star-one">✦</span><span class="hero-star star-two">✧</span></div>
+    </section>
+
+    <section class="assistant-card" id="ask" aria-label="Admission question assistant">
+      <div class="card-heading"><div><p class="eyebrow">ADMISSIONS DESK <span class="live-pill">LIVE</span></p><h2>What would you like to know?</h2><p class="card-subtitle">Ask about a course, fee, deadline, or application requirement.</p></div><span class="sparkle" aria-hidden="true">✳</span></div>
+      <div class="suggestions" aria-label="Suggested questions">
+        <button type="button" class="suggestion">How do I apply?</button><button type="button" class="suggestion">What documents do I need?</button><button type="button" class="suggestion">When is the deadline?</button>
+      </div>
+      <div id="conversation" class="conversation" aria-live="polite"></div>
+      <form id="question-form" class="question-form">
+        <label class="sr-only" for="question">Your question</label><input id="question" name="question" type="text" maxlength="500" placeholder="Ask your admission question..." autocomplete="off" required>
+        <button id="voice-button" class="voice-button" type="button" aria-label="Dictate your question" title="Speak your question"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.93V21h2v-3.07A7 7 0 0 0 19 11h-2Z"/></svg></button>
+        <button id="send-button" type="submit" aria-label="Send question">Ask <span aria-hidden="true">↗</span></button>
+      </form>
+      <p id="voice-status" class="voice-status" aria-live="polite"></p>
+      <p class="helper">Answers are general guidance. Always confirm details with the official admission notice.</p>
+    </section>
+
+    <section class="campus-section" id="campus">
+      <div class="section-heading"><div><p class="eyebrow">A LOOK AROUND ROZHOK</p><h2>Life on campus</h2><p>Explore the places where learning, ideas, and friendships grow.</p></div><span class="guide-index">CAMPUS LIFE</span></div>
+      <div class="campus-grid">
+        <button type="button" class="campus-card" data-title="Learning together" data-image="{{ url_for('static', filename='campus/classroom.png') }}" data-alt="University students studying together in a bright classroom">
+          <img src="{{ url_for('static', filename='campus/classroom.png') }}" alt="Students studying together in a university classroom" loading="lazy">
+          <span class="campus-type">ACADEMIC SPACES</span><span class="campus-caption"><strong>Learning together</strong><small>Classrooms built for ideas and collaboration</small></span><span class="campus-open">VIEW PHOTO ↗</span>
+        </button>
+        <button type="button" class="campus-card" data-title="A place to belong" data-image="{{ url_for('static', filename='campus/campus-building.png') }}" data-alt="Students walking toward a modern university campus building">
+          <img src="{{ url_for('static', filename='campus/campus-building.png') }}" alt="Students walking toward the university campus building" loading="lazy">
+          <span class="campus-type">OUR CAMPUS</span><span class="campus-caption"><strong>A place to belong</strong><small>Explore the spaces around University of Rozhok</small></span><span class="campus-open">VIEW PHOTO ↗</span>
+        </button>
+        <button type="button" class="campus-card" data-title="Breaks and good company" data-image="{{ url_for('static', filename='campus/cafeteria.png') }}" data-alt="Students sharing a meal in a university cafeteria">
+          <img src="{{ url_for('static', filename='campus/cafeteria.png') }}" alt="Students sharing lunch in the university cafeteria" loading="lazy">
+          <span class="campus-type">CAMPUS COMMUNITY</span><span class="campus-caption"><strong>Breaks and good company</strong><small>A welcoming spot to recharge and connect</small></span><span class="campus-open">VIEW PHOTO ↗</span>
+        </button>
+      </div>
+      <p class="campus-note">Illustrative campus visuals for this project. Replace with official University of Rozhok photos when available.</p>
+    </section>
+    <dialog class="campus-dialog" id="campus-dialog" aria-label="Campus photo viewer">
+      <button type="button" class="campus-dialog-close" aria-label="Close photo">×</button>
+      <img id="campus-dialog-image" src="" alt="">
+      <p id="campus-dialog-caption"></p>
+    </dialog>
+
+    <section class="guide-section" id="admissions-guide">
+      <div class="section-heading guide-heading"><div><p class="eyebrow">YOUR ADMISSION CHECKLIST</p><h2>Everything you need to know</h2><p>Open a section for practical guidance and important details.</p></div><span class="guide-index">01 — 05</span></div>
+      <div class="guide-grid">
+        {% for section in sections %}
+        <article class="guide-card" id="{{ section.id }}">
+          <div class="guide-card-top"><span class="guide-number">0{{ loop.index }}</span><span class="guide-symbol">{% if section.id == 'procedures' %}↗{% elif section.id == 'fees' %}＄{% elif section.id == 'dates' %}◷{% elif section.id == 'documents' %}▤{% else %}◎{% endif %}</span></div>
+          <p class="guide-kicker">{{ section.category }}</p><h3>{{ section.title }}</h3><p class="guide-description">{{ section.description }}</p>
+          {% for item in section["items"] %}<details class="guide-detail"><summary>{{ item.question }}<span>＋</span></summary><p>{{ item.answer }}</p></details>{% else %}<p class="guide-empty">Information will be added soon.</p>{% endfor %}
+          <button type="button" class="guide-ask" data-topic="{{ section.category }}">Ask about {{ section.category|lower }} <span>↗</span></button>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="bottom-cta"><div><p class="eyebrow">NEED A LITTLE MORE HELP?</p><h2>Your question deserves an answer.</h2><p>Ask the admissions assistant for guidance on the next step.</p></div><a class="primary-link" href="#ask">Talk to the assistant <span>↗</span></a></section>
+    <footer>
+      <div class="footer-brand"><img src="{{ url_for('static', filename='university-mark.svg') }}" alt=""><span>UNIVERSITY OF ROZHOK</span></div>
+      <p>Student guidance portal <span>·</span> Dates and fees can change each admission cycle</p>
+      <div class="footer-support"><span>CONTACT SUPPORT</span><a href="tel:+918917787472">+91 89177 87472</a></div>
+    </footer>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</body>
+</html>

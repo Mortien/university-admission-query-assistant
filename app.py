@@ -58,4 +58,3 @@ def courses():
 if __name__ == "__main__":
     # Bind to the local network so a phone on the same Wi-Fi can open the app.
     app.run(host=os.getenv("HOST", "0.0.0.0"), port=int(os.getenv("PORT", "5000")), debug=os.getenv("FLASK_DEBUG") == "1")
-f
